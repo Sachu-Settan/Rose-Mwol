@@ -1,10 +1,10 @@
-console.log('Start...')
+console.log('Starting...')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
 const CFonts =require('cfonts');
-cfonts.say('Rose', {
+cfonts.say('Ammu', {
   colors: ['#f2aa4c'],
   font: 'block',
   align: 'center',
