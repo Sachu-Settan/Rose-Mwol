@@ -50,5 +50,14 @@ https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git
   [![Sachu](https://telegra.ph/file/c6581a99933c5776d65d0.jpg)](https://github.com/Sachu-Settan/)[`Sachu`](https://github.com/Sachu)
 ----|
    `Re-Devoloper`
-                                  
+    
+    
+##Special Thanks To
+    
+    [![DEVILSER](https://i.imgur.com/CqEfYef.jpeg)](https://github.com/DEVILSER)[`DEVILSER`](https://github.com/DEVILSER)
+
+----
+
+
+                      
   </div
