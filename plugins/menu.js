@@ -191,40 +191,40 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           
            .trim(),
            "description": "*DON'T SPAM*",
-          "buttonText": "Click  Here",
+          "buttonText": "Select Chy",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": `Rose Mwol`,
-                  "description": "Rose Mwol git link",
+                  "title": `🌹 Rose Mwol`,
+                  "description": "Rose Mwol Git Link",
                   "rowId": ".git"
                 }, {
-                  "title": "💻Game",
+                  "title": "💻 Game",
                   "description": "Game features",
                   "rowId": ".? game"
 
                 }, {
-                  "title": "💸XP",
+                  "title": "💸 XP",
                   "description": "Features level & usage limit",
                   "rowId": ".? xp"
 
                 },  {
-                  "title": "Video Maker",
+                  "title": "▶ Video Maker",
                   "description": "Making Different Types Of Videos",
                   "rowId": ".? .videomaker"
 
                 },{
-                  "title": "Sticker",
+                  "title": "💢 Stickers",
                   "description": "Features for making stickers",
                   "rowId": ".? stiker"
                 }, { 
-                "title": "Anime",
+                "title": "👺 Anime",
                 "description": "Anime Related Plugin",
                 "rowId": ".? anime"
               },  {
-                  "title": "Quotes",
+                  "title": "☮ Quotes",
                   "description": "Gives You random quotes",
                   "rowId": ".? quote"
                 }, {
@@ -232,7 +232,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "Group Admin Commands",
                   "rowId": ".? admin"
                 }, {
-                  "title": "Grup",
+                  "title": "Group",
                   "description": "Group Related Commands",
                   "rowId": ".? grup"
                 }, {
