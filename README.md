@@ -11,11 +11,12 @@
 ## <!-- Typing SVG -->
 <p align="center">
         <img
-        src="https://readme-typing-svg.herokuapp.com?size=30&width=800&lines=Rose+Mwol+Is+A+Modified+Version+Of;Wizard-Sir+By+Ajmal+Achu;We+Have+Cloned+The+Project+And+Added;Some+More+Things."
+        src="https://readme-typing-svg.herokuapp.com?size=30&width=800&lines=Rose+Mwol+Is+A+Modified+Version+Of....;Wizard-Sir+By+Ajmal+Achu..............;We+Have+Cloned+The+Project+And+Added.......;Some+More+Things........"
             alt="Typing SVG"
         />
     </a>
 </p>
+  
 ## `SCAN QR`
 
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@Sachu-Settan/Rose-Mwol-Qr-test)
@@ -46,7 +47,7 @@ https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git
 ## Developers
   <div align="center">
   
-  [![Sachu](https://telegra.ph/file/d9a62ac5ea9de37a21af1.jpg)](https://github.com/Sachu-Settan/)[`Sachu`](https://github.com/Sachu)
+  [![Sachu](https://telegra.ph/file/c6581a99933c5776d65d0.jpg)](https://github.com/Sachu-Settan/)[`Sachu`](https://github.com/Sachu)
 ----|
    `Re-Devoloper`
                                   
