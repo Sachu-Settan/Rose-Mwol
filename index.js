@@ -1,19 +1,20 @@
-console.log('Starting...')
+console.log('Start...')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
-const CFonts =require('cfonts');
-cfonts.say('Ammu', {
+const CFonts = require('cfonts')
+CFonts.say('Ammu', {
   colors: ['#f2aa4c'],
   font: 'block',
   align: 'center',
 })
-cfonts.say(`'${package.name}' By @${package.author.name || package.author}`, {
+CFonts.say(`'${package.name}' By @${package.author.name || package.author}`, {
   colors: ['#f2aa4c'],
   font: 'console',
   align: 'center',
 })
+
 var isRunning = false
 /**
  * Start a js file
@@ -23,7 +24,7 @@ function start(file) {
   if (isRunning) return
   isRunning = true
   let args = [path.join(__dirname, file), ...process.argv.slice(2)]
-  cfonts.say([process.argv[0], ...args].join(' '), {
+  CFonts.say([process.argv[0], ...args].join(' '), {
     colors: ['#f2aa4c'],
     font: 'console',
     align: 'center',
