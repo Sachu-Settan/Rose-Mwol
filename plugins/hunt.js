@@ -64,29 +64,29 @@ let handler = async (m, { conn, text }) => {
 		player.lasthunt = new Date * 1 // waktu hunt 2menit
 
 		if (player.healt < 0) {
-			let msg = `*${pname}* You Die Killed By ${monsterName}`
+			let msg = `*${pname}* Anda Mati Di Bunuh Oleh ${monsterName}`
 			if (player.level > 0) {
 				player.level -= 1
-				msg += `\nYour Level Drops 1 For Dying While Hunting!`
+				msg += `\nLevel Anda Turun 1 Karena Mati Saat Berburu!`
 			}
 			player.healt = 100
 			m.reply(msg)
 			return
 		}
 
-		player.limit += limit * 1
+		player.money += coins * 1
 		player.exp += exp * 1
 
-		let pesan = `*${pname}* Find And Kill *${monsterName}*\nGet ${new Intl.NumberFormat('en-US').format(coins)} coins & ${new Intl.NumberFormat('en-US').format(exp)} XP\nDecreased -${dmg}Hp, Remaining ${player.healt}/${100}`
+		let pesan = `*${pname}* Menemukan Dan Membunuh *${monsterName}*\nMendapatkan ${new Intl.NumberFormat('en-US').format(coins)} coins & ${new Intl.NumberFormat('en-US').format(exp)} XP\nBerkurang -${dmg}Hp, Tersisa ${player.healt}/${100}`
 		m.reply(pesan)
-	} else throw `Wait *00:${cd1}:${cd2}* To Hunt Again`
+	} else throw `Tunggu *00:${cd1}:${cd2}* Untuk Berburu Lagi`
 }
 
 handler.help = ['hunt']
-handler.tags = ['game']
+handler.tags = ['rpg']
 handler.command = /^hunt/i
 
-handler.group = true
+handler.disabled = true
 
 handler.fail = null
 
