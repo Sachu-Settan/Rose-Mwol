@@ -83,7 +83,7 @@ let handler = async (m, { conn, text }) => {
 }
 
 handler.help = ['hunt']
-handler.tags = ['rpg']
+handler.tags = ['game']
 handler.command = /^hunt/i
 
 handler.disabled = true
