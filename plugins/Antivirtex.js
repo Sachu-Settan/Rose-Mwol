@@ -8,7 +8,7 @@ handler.before = function(m, { text }) {
   let name = m.fromMe ? conn.user : conn.contacts[m.sender]
   let users = m.sender
 
-    if (m.text > 5000) {
+    if (m.text > 5000000000000000000000000000000000000000000000000000000000000000) {
   this.reply(m.chat, '*「 ANTI VIRTEX 」*\n\nDetected *${username}* sent a virtex link!\n\nSorry you will be kicked from this group!', m)
      this.groupRemove(m.chat, [users])
   }
