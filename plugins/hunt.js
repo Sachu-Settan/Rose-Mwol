@@ -74,19 +74,20 @@ let handler = async (m, { conn, text }) => {
 			return
 		}
 
-		player.money += coins * 1
+		player.limit += limit * 1
 		player.exp += exp * 1
 
-		let pesan = `*${pname}* Menemukan Dan Membunuh *${monsterName}*\nMendapatkan ${new Intl.NumberFormat('en-US').format(coins)} coins & ${new Intl.NumberFormat('en-US').format(exp)} XP\nBerkurang -${dmg}Hp, Tersisa ${player.healt}/${100}`
+
+		let pesan = `*${pname}* Find And Kill *${monsterName}*\nGet ${new Intl.NumberFormat('en-US').format(coins)} coins & ${new Intl.NumberFormat('en-US').format(exp)} XP\nDecreased -${dmg}Hp, Remaining ${player.healt}/${100}`
 		m.reply(pesan)
-	} else throw `Tunggu *00:${cd1}:${cd2}* Untuk Berburu Lagi`
+	} else throw `Wait *00:${cd1}:${cd2}* To Hunt Again`
 }
 
 handler.help = ['hunt']
 handler.tags = ['game']
 handler.command = /^hunt/i
 
-handler.disabled = true
+handler.group = true
 
 handler.fail = null
 
