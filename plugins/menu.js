@@ -367,7 +367,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch("https://raw.githubusercontent.com/Sachu-Settan/Rose-Mwol/main/Media/Rose-Mwol.jpg")).buffer(), text.trim(), '© ʀᴏꜱᴇ-ᴍᴡᴏʟ ©', 'Owner Bot', ',owner', 'All Commands', '.? all', m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch("https://raw.githubusercontent.com/Sachu-Settan/Rose-Mwol/main/Media/Rose-Mwol.jpeg")).buffer(), text.trim(), '© ʀᴏꜱᴇ-ᴍᴡᴏʟ ©', 'Owner Bot', ',owner', 'All Commands', '.? all', m)
   } catch (e) {
     conn.reply(m.chat, 'Sorry, Try Again', m)
     throw e
