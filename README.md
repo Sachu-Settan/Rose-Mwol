@@ -50,9 +50,8 @@ https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git
 ----|
    `Re-Devoloper`
     
-Special Thanks To :
+## Special Thanks To :
     
-  [![Devil Sir](https://telegra.ph/file/1c92f60104b8122667b37.jpg)](https://github.com/D-3-V-1-L/)
-    [`Devil`](https://github.com/D-3-V-1-L/)
+  [![Devil Sir](https://telegra.ph/file/1c92f60104b8122667b37.jpg)](https://github.com/D-3-V-1-L)[`Devil`](https://github.com/D-3-V-1-L/)
     
   </div>
