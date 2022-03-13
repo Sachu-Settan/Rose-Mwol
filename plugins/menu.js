@@ -12,7 +12,7 @@ const defaultMenu = {
      
 🔸Hai, %name!
 
-🔸 Github: [ Comming Soon ]
+🔸 Github: [ sachu-settan.github.io ]
 
 
      〘 *Rose Mwol* 〙
@@ -192,7 +192,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 └─────────────────⸙ \n\ ______`
           
            .trim(),
-           "description": "*PLS DON'T SPAM*",
+           "description": "*DON'T SPAM*",
           "buttonText": "Select Chy",
           "listType": "SINGLE_SELECT",
           "sections": [
