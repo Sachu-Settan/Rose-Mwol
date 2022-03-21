@@ -9,9 +9,9 @@ let handler = async (m, { conn, text }) => {
     throw `Eror`
   }
 }
-handler.help = ['setbotbio <txt>']
+handler.help = ['setbio <txt>']
 handler.tags = ['owner']
-handler.command = /^(setbotbio)$/i
+handler.command = /^(setbio)$/i
 handler.owner = true
 
 module.exports = handler

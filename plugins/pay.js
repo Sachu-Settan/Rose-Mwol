@@ -1,11 +1,11 @@
 let pajak = 0.02
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  let fail = `this command to give XP to another user\n\nexample:\n${usedPrefix + command} @919539102851 10\nor reply to doi's message with the command: ${usedPrefix + command} 10`
+  let fail = `this command to give XP to another user\n\nexample:\n${usedPrefix + command} @918113921898 10\nor reply to doi's message with the command: ${usedPrefix + command} 10`
   let who
   if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
   else who = m.chat
   if (!who) {
-    conn.reply(m.chat, fail, m, { contextInfo: { mentionedJid: ['919539102851@s.whatsapp.net'] } })
+    conn.reply(m.chat, fail, m, { contextInfo: { mentionedJid: ['918113921898@s.whatsapp.net'] } })
     throw false
   }
   if (typeof global.db.data.users[who] == "undefined") {
@@ -29,7 +29,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
   let txt = text.replace('@' + who.split`@`[0], '').trim()
   if (!txt) {
-    conn.reply(m.chat, fail, m, { contextInfo: { mentionedJid: ['919539102851@s.whatsapp.net'] } })
+    conn.reply(m.chat, fail, m, { contextInfo: { mentionedJid: ['918113921898@s.whatsapp.net'] } })
     throw false
   }
   if (isNaN(txt)) throw 'only numbers'

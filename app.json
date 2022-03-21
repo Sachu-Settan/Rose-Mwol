@@ -2,25 +2,27 @@
 "name": "Rose-Mwol",
   "description": "Lightweight WhatsApp Bot",
   "repository": "https://github.com/Sachu-Settan/Rose-Mwol",
-  "logo": "https://raw.githubusercontent.com/Sachu-Settan/Rose-Mwol/main/Media/Rose-Bot-Sachu-small.jpg",
+  "logo": "https://i.imgur.com/ku3AeLc.jpg",
   "keywords": ["bot", "whatsapp", "whatsapp-bot"],
-  "buildpacks": [
-    {
+    "buildpacks": [
 
-        "url": "heroku/nodejs"
+        {
 
-    },
+            "url": "heroku/nodejs"
 
-    {
+        },
 
-        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        {
 
-    },
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
 
-    {
+        },
 
-        "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick"
+        {
 
-    }
-]
+            "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick"
+
+        }
+
+    ]
 }

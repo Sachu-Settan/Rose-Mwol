@@ -24,7 +24,7 @@ ${upvote.map(u => '@' + u.split('@')[0]).join('\n')}
 *DEVOTE*
 _Total: ${devote.length}_
 ${devote.map(u => '@' + u.split('@')[0]).join('\n')}
-_by Eva_
+_by Rose-Mwol_
     `.trim()
     await conn.send2Button(m.chat, caption, '© Ammu', 'UPVOTE', `${usedPrefix}upvote`, 'DEVOTE', `${usedPrefix}devote`, { contextInfo: { mentionedJid } })
 }

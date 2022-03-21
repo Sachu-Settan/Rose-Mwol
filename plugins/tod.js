@@ -1,4 +1,4 @@
-let fetch = require('node-fetch')
+/*let fetch = require('node-fetch')
 let handler = async (m, { conn, command }) => {
   if (/^tod$/i.test(command)) {
     conn.send3Button(m.chat, 'Truth or Dare', 'made with ❤️ by ariffb', 'TRUTH', ',truth', 'DARE', ',dare', 'RANDOM', `${pickRandom([',dare', ',truth'])}`)
@@ -29,3 +29,4 @@ module.exports = handler
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
+*/

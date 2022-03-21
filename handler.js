@@ -120,7 +120,7 @@ module.exports = {
           if (!'backup' in settings) settings.backup = false
           if (!isNumber(settings.backupDB)) settings.backupDB = 0
           if (!'groupOnly' in settings) settings.groupOnly = false
-          if (!'jadibot' in settings) settings.groupOnly = false
+          if (!'jadibot' in settings) settings.groupOnly = true
           if (!'nsfw' in settings) settings.nsfw = true
           if (!isNumber(settings.status)) settings.status = 0
         } else global.db.data.settings[this.user.jid] = {
@@ -131,7 +131,7 @@ module.exports = {
           backup: false,
           backupDB: 0,
           groupOnly: false,
-          jadibot: false,
+          jadibot: true,
           nsfw: true,
           status: 0,
         }
@@ -391,7 +391,7 @@ module.exports = {
             let groupMetadata = await this.groupMetadata(jid)
             for (let user of participants) {
               // let pp = './src/avatar_contact.png'
-              let pp = 'https://raw.githubusercontent.com/Sachu-Settan/Rose-Mwol/main/Media/Rose-Bot-Sachu-small.jpg'
+              let pp = 'https://telegra.ph/file/fd4230902e75d397d8667.jpg'
               try {
                 pp = await uploadImage(await (await fetch(await this.getProfilePicture(user))).buffer())
               } catch (e) {
@@ -478,7 +478,7 @@ global.dfail = (type, m, conn) => {
     private: 'This command can only be used in Private Chat✅',
     admin: 'This command is only for *Admin* in the group✅',
     botAdmin: 'Make bot an *Admin* to use this command✅',
-    unreg: 'Please register to use this feature by typing:\n\n*#register name.age*\n\nEXAMPLE: *#register Sachu.18*',
+    unreg: 'Please register to use this feature by typing:\n\n*#register name.age*\n\nEXAMPLE: *#register Wizard.18*',
     nsfw: 'NSFW is not active'
   }[type]
   if (msg) return m.reply(msg)

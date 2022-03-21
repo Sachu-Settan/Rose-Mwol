@@ -16,7 +16,7 @@ Album: ${album}
 File Size: ${filesize}
 Duration: ${duration}
 
-© Ammu
+© ʀᴏꜱᴇ-ᴍᴡᴏʟ
     `.trim()
 
     conn.sendFile(m.chat, img_url, 'eror.jpg', pesan, m, 0, { thumbnail: await (await fetch(img_url)).buffer() })

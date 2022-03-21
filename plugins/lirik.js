@@ -10,5 +10,5 @@ let handler = async (m, { text, usedPrefix, command }) => {
 handler.help = ['lyric'].map(v => v + ' <song>')
 handler.tags = ['internet']
 handler.command = /^(lyric|lyrics?)$/i
-
+ 
 module.exports = handler

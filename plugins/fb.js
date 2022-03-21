@@ -8,7 +8,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     // m.reply(require('util').format(json))
     if (!json.status) throw json
     await m.reply(global.wait)
-    await conn.sendFile(m.chat, json.data[0].url, '', '© Eva', m)
+    await conn.sendFile(m.chat, json.data[0].url, '', '© Rose-Mwol', m)
   }).catch(_ => _)
 }
 handler.help = ['fb'].map(v => v + ' <url>')

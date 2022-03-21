@@ -1,33 +1,19 @@
 let limit = 30
-const { servers, yta } = require('../lib/y2mate')
-let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
-  if (!args || !args[0]) throw `Example:\n${usedPrefix + command} https://www.youtube.com/watch`
-  let chat = global.db.data.chats[m.chat]
-  let server = (args[1] || servers[0]).toLowerCase()
-  let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
-  let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  m.reply(isLimit ? `File Size: ${filesizeF}\nFile size above ${limit} MB, download it yourself: ${dl_link}` : global.wait)
-  if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
-*Title:* ${title}
-*File Size:* ${filesizeF}
-`.trim(), m, null, {
-    asDocument: chat.useDocument, mimetype: 'audio/mp4'
-  })
+let fetch = require('node-fetch')
+
+let handler = async (m, { conn, args, isPrems, isOwner }) => {
+	if (!args || !args[0]) throw "Uhm... where's the url"
+	let chat = db.data.chats[m.chat]
+	let dl_link = `https://yt-downloader.akkun3704.repl.co/?url=${args[0]}&filter=audioonly&quality=&contenttype=`
+	let json = await (await fetch(`https://yt-downloader.akkun3704.repl.co/yt?url=${args[0]}`)).json()
+	let res = await (await fetch(dl_link)).buffer()
+	let isLimit = (isPrems || isOwner ? 99 : limit) * 1000000 < res.length
+  conn.reply(m.chat,'ᴜᴘʟᴏᴀᴅɪɴɢ....', m)
+	if (!isLimit) conn.sendMessage(m.chat, res, chat.useDocument ? 'documentMessage' : 'audioMessage', { quoted: m, filename: json.result.videoDetails.title + '.mp3', mimetype: 'audio/mp4' })
 }
-handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
+handler.help = ['mp3', 'a'].map(v => 'yt' + v)
 handler.tags = ['downloader']
 handler.command = /^yt(a|mp3)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-handler.exp = 0
 handler.limit = true
 
 module.exports = handler

@@ -5,24 +5,17 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `
-━━━━ 「 *Rose Mwol* 」 ━━━━͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
-
-     ✪〔 %me 〕✪
-     
-🔸Hai, %name!
-
-🔸 Github: [ Comming Soon ]
-
-
-     〘 *Rose Mwol* 〙
-%readmore`.trimStart(),
+    before: `╭────────────────╮
+          ✪  *ʀᴏꜱᴇ-ᴍᴡᴏʟ* ✪           
+╰────────────────╯
+       
+  `.trimStart(),
   header: '┌─〔 %category 〕',
   body: '├ %cmd',
   footer: '└────\n',
   after: `
-*%npmname@*
-${'```%npmdesc```'}
+   ᴿᴼˢᴱ⁻ᴹᵂᴼᴸ
+   ᴹᴼᴰᵁᴸᴬᴿ ᵂᴴᴬᵀᔆᴬᴾᴾ ᴮᴼᵀ
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
@@ -169,117 +162,106 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `ʀᴏꜱᴇ-ᴍᴡᴏʟ  ʙʏ ꜱᴀᴄʜᴜ
-
-┌─────❲ *ʀᴏꜱᴇ-ᴍᴡᴏʟ* ❳
-┊
-└─────────────────❋ཻུ۪۪⸙
-        
-        ╔╗╔╗╔══╗╔══╗
-        ║╚╝║║╔╗║╚║║╝
-        ║╔╗║║╠╣║╔║║╗
-        ╚╝╚╝╚╝╚╝╚══╝
-
-┌─────❲ ᴀʙᴏᴜᴛ ❳
-┊☞  Oi ${ucapan()}
-┊☞ 👤 *NAME* : ${name}
-┊☞ 🧭 *TIME* : ${time},
-┊☞ 💫 *WEEK* : ${week},
-┊☞ ✅ *DATE* : ${date},
-┊☞ 💝 *OWNER* : ꜱᴀᴄʜᴜ
-┊☞ 🖌️ *PREFIX* : ᴍᴜʟᴛɪ ᴘʀᴇғɪx 
-┊☞ ☮️ *BOT NAME* : ʀᴏꜱᴇ-ᴍᴡᴏʟ
-└─────────────────⸙ \n\ ______`
+          "title": `HI,
+╭━━━━━━ᆫ ᴍᴇɴᴜ ᄀ━━━━━━
+┃ ⎆  Oi ${ucapan()}
+┃ ⎆  *NAME* : ${name}
+┃ ⎆  *BOT*   : ʀᴏꜱᴇ-ᴍᴡᴏʟ
+┃ ⎆  *OWNER* :  ꜱᴀᴄʜᴜ-ꜱᴇᴛᴛᴀɴ
+┃ ⎆  *PREFIX* : ᴍᴜʟᴛɪ ᴘʀᴇғɪx 
+┃ ⎆  *WEEK* : ${week},
+┃ ⎆  *DATE* : ${date},
+╰━━━━━━━━━━━━━━━━━━━━━━━ \n`
           
            .trim(),
-           "description": "*PLS DON'T SPAM*",
-          "buttonText": "Select Chy",
+           "description": "*DON'T SPAM*",
+          "buttonText": "Click  Here",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": `🌹 Rose Mwol`,
-                  "description": "Rose Mwol Git Link",
+                  "title": `ʀᴏꜱᴇ-ᴍᴡᴏʟ`,
+                  "description": "sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ",
                   "rowId": ".git"
                 }, {
-                  "title": "💻 Game",
-                  "description": "Game features",
+                  "title": "𝗚𝗮𝗺𝗲𝘀",
+                  "description": "",
                   "rowId": ".? game"
 
                 }, {
-                  "title": "💸 XP",
-                  "description": "Features level & usage limit",
+                  "title": "𝗫𝗣",
+                  "description": "",
                   "rowId": ".? xp"
 
                 },  {
-                  "title": "▶ Video Maker",
-                  "description": "Making Different Types Of Videos",
-                  "rowId": ".? .videomaker"
+                  "title": "𝗩𝗶𝗱𝗲𝗼 𝗠𝗮𝗸𝗲𝗿",
+                  "description": "",
+                  "rowId": ".? videomaker"
 
                 },{
-                  "title": "💢 Stickers",
-                  "description": "Features for making stickers",
+                  "title": "𝗦𝘁𝗶𝗰𝗸𝗲𝗿",
+                  "description": "",
                   "rowId": ".? stiker"
                 }, { 
-                "title": "👺 Anime",
-                "description": "Anime Related Plugin",
+                "title": "𝗔𝗻𝗶𝗺𝗲",
+                "description": "",
                 "rowId": ".? anime"
               },  {
-                  "title": "☮ Quotes",
-                  "description": "Gives You random quotes",
+                  "title": "𝗤𝘂𝗼𝘁𝗲𝘀",
+                  "description": "",
                   "rowId": ".? quote"
                 }, {
-                  "title": "Admin",
-                  "description": "Group Admin Commands",
+                  "title": "𝗔𝗱𝗺𝗶𝗻",
+                  "description": "",
                   "rowId": ".? admin"
                 }, {
-                  "title": "Group",
-                  "description": "Group Related Commands",
+                  "title": "𝗚𝗿𝘂𝗽",
+                  "description": "",
                   "rowId": ".? grup"
                 }, {
-                  "title": "Premium",
-                  "description": "Premium Users Plugins",
+                  "title": "𝗣𝗿𝗲𝗺𝗶𝘂𝗺",
+                  "description": "",
                   "rowId": ".? premium"
                 }, {
-                  "title": "Internet",
-                  "description": "Commands Related To Internet",
+                  "title": "𝗜𝗻𝘁𝗲𝗿𝗻𝗲𝘁",
+                  "description": "",
                   "rowId": ".? internet"
                 }, {
-                  "title": "Anonymous",
-                  "description": "To Start Anonymous Chatting",
+                  "title": "𝗔𝗻𝗼𝗻𝘆𝗺𝗼𝘂𝘀",
+                  "description": "",
                   "rowId": ".? anonymous"
                 }, {
-                  "title": "Magic Shell",
-                  "description": "Random answer feature",
-                  "rowId": `.? magicshell`
+                  "title": "𝗠𝗮𝗴𝗶𝗰 𝗦𝗵𝗲𝗹𝗹",
+                  "description": "",
+                  "rowId": ".? magicshell"
                 }, {
-                  "title": "Nulis & Logo",
-                  "description": "Text Maker Coammnds",
+                  "title": "𝗡𝘂𝗹𝗶𝘀 & 𝗟𝗼𝗴𝗼",
+                  "description": "",
                   "rowId": ".? nulis"
                 }, {
-                  "title": "Downloader",
-                  "description": "Downloading Commnds",
+                  "title": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿",
+                  "description": "",
                   "rowId": ".? downloader"
                 }, {
-                  "title": "Tools",
-                  "description": "Tool features",
+                  "title": "𝗧𝗼𝗼𝗹𝘀",
+                  "description": "",
                   "rowId": ".? tools"
                 }, {
-                  "title": "Voice Changer",
-                  "description": "To change the voice",
+                  "title": "𝗩𝗼𝗶𝗰𝗲 𝗖𝗵𝗮𝗻𝗴𝗲𝗿",
+                  "description": "",
                   "rowId": `.? audio`
                 }, {
-                  "title": "Fun",
-                  "description": "Just for fun",
+                  "title": "𝗙𝘂𝗻",
+                  "description": "",
                   "rowId": ".? fun"
                 }, {
-                  "title": "Database",
-                  "description": "User database",
+                  "title": "𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲",
+                  "description": "",
                   "rowId": ".? database"
                 },{
                   "title": "Owner",
-                  "description": "Owner's special features",
+                  "description": "",
                   "rowId": ".? owner"
                 }
               ]
@@ -361,21 +343,21 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       exp: exp - min,
       maxexp: xp,
       totalexp: exp,
-      xp4levelup: max - exp <= 0 ? `Ready for *${_p}levelup*` : `${max - exp} More XP for levelup`,
+      xp4levelup: max - exp <= 0 ? `Ready for *${_p}levelup*` : `${max - exp} More XP for Levelup`,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
       level, limit, name, weton, week, date, time, totalreg, rtotalreg, role,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch("https://raw.githubusercontent.com/Sachu-Settan/Rose-Mwol/main/Media/Rose-Bot-Sachu.jpg")).buffer(), text.trim(), '© ʀᴏꜱᴇ-ᴍᴡᴏʟ ©', 'Owner Bot', ',owner', 'All Commands', '.? all', m)
+    await conn.send2ButtonImg(m.chat, await (await fetch("https://raw.githubusercontent.com/Sachu-Settan/")).buffer(), text.trim(), '© ʀᴏꜱᴇ-ᴍᴡᴏʟ ©', 'Owner Bot', '.owner', 'All Commands', '.listt', m)
   } catch (e) {
     conn.reply(m.chat, 'Sorry, Try Again', m)
     throw e
   }
 }
-handler.help = ['menu', 'help','list','wizard', '?']
+handler.help = ['menu', 'help','list','Rose-Mwol', '?']
 handler.tags = ['main']
-handler.command = /^(listt|\?)$/i
+handler.command = /^(list|menu|help|Rose-Mwol|bot|\?)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -385,8 +367,6 @@ handler.private = false
 handler.admin = false
 handler.botAdmin = false
 
-handler.fail = null
-handler.exp = 3
 
 module.exports = handler
 

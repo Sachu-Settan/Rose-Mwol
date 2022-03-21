@@ -1,11 +1,11 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return conn.reply(m.chat, `Usage examples:\n${usedPrefix + command} who am I? @919539102851 you are my owner ><`, m, { contextInfo: { mentionedJid: ['919539102851@s.whatsapp.net'] } })
+  if (!text) return conn.reply(m.chat, `Usage examples:\n${usedPrefix + command} who am I? @918113921898 you are my owner ><`, m, { contextInfo: { mentionedJid: ['918113921898@s.whatsapp.net'] } })
   let cm = copy(m)
   let who
   if (text.includes('@0')) who = '0@s.whatsapp.net'
   else if (m.isGroup) who = cm.participant = m.mentionedJid[0]
   else who = m.chat
-  if (!who) return conn.reply(m.chat, `Usage examples:\n${usedPrefix + command} who am I? @919539102851 you are my owner ><`, m, { contextInfo: { mentionedJid: ['919539102851@s.whatsapp.net'] } })
+  if (!who) return conn.reply(m.chat, `Usage examples:\n${usedPrefix + command} who am I? @918113921898 you are my owner ><`, m, { contextInfo: { mentionedJid: ['918113921898@s.whatsapp.net'] } })
   cm.key.fromMe = false
   cm.message[m.mtype] = copy(m.msg)
   let sp = '@' + who.split`@`[0]
@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
   })
 }
-handler.help = ['fitnah <teks> @user <teks>']
+handler.help = ['fitnah <text> @user <text>']
 handler.tags = ['tools']
 handler.command = /^(fitnah|fakereply)$/
 
