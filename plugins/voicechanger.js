@@ -7,7 +7,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
         let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
         let set
-        if (/supereq/.test(command)) set = 'blown blown|superequalizer=1b=10:2b=10:3b=1:4b=5:5b=7:6b=5:7b=2:8b=3:9b=4:10b=5:11b=6:12b=7:13b=8:14b=8:15b=9:16b=9:17b=10:18b=10[a];[a]loudnorm=I=-16:TP=-1.5:LRA=14" -ar 48k'
         if (/bass/.test(command)) set = '-af equalizer=f=94:width_type=o:width=2:g=30'
         if (/blown/.test(command)) set = '-af acrusher=.1:1:64:0:log'
         if (/deep/.test(command)) set = '-af atempo=4/4,asetrate=44500*2/3'
@@ -35,9 +34,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         throw e
     }
 }
-handler.help = ['bass', 'blown', 'deep', 'earrape', 'fast', 'fat', 'nightcore', 'reverse', 'supereq', 'robot', 'slow', 'smooth', 'tupai'].map(v => v + ' [vn]')
+handler.help = ['bass', 'blown', 'deep', 'earrape', 'fast', 'fat', 'nightcore', 'reverse', 'robot', 'slow', 'smooth', 'tupai'].map(v => v + ' [vn]')
 handler.tags = ['audio']
-handler.command = /^(bass|blown|deep|earrape|fas?t|nightcore|reverse|robot|slow|smooth|tupai|squirrel|chipmunk|supereq)$/i
+handler.command = /^(bass|blown|deep|earrape|fas?t|nightcore|reverse|robot|slow|smooth|tupai|squirrel|chipmunk)$/i
 
 module.exports = handler
 
