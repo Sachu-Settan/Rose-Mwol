@@ -391,7 +391,7 @@ module.exports = {
             let groupMetadata = await this.groupMetadata(jid)
             for (let user of participants) {
               // let pp = './src/avatar_contact.png'
-              let pp = 'https://telegra.ph/file/6065cf6a7d3ef6faab6b8.jpg'
+              let pp = 'https://telegra.ph/file/fd4230902e75d397d8667.jpg'
               try {
                 pp = await uploadImage(await (await fetch(await this.getProfilePicture(user))).buffer())
               } catch (e) {
@@ -478,8 +478,8 @@ global.dfail = (type, m, conn) => {
     private: 'This command can only be used in Private Chat✅',
     admin: 'This command is only for *Admin* in the group✅',
     botAdmin: 'Make bot an *Admin* to use this command✅',
-    unreg: 'Please register to use this feature by typing:\n\n*#register name.age*\n\nEXAMPLE: *#register Wizard.18*',
-    nsfw: 'NSFW Is Not Active'
+    unreg: 'Please register to use this feature by typing:\n\n*#register name.age*\n\nEXAMPLE: *#register Sachu.18*',
+    nsfw: 'NSFW is not active'
   }[type]
   if (msg) return m.reply(msg)
 }
