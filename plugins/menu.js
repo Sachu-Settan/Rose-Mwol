@@ -15,7 +15,6 @@ const defaultMenu = {
   footer: '└────\n',
   after: `
    ᴿᴼˢᴱ⁻ᴹᵂᴼᴸ
-   ᴹᴼᴰᵁᴸᴬᴿ ᵂᴴᴬᵀᔆᴬᴾᴾ ᴮᴼᵀ
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
@@ -174,7 +173,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 ╰━━━━━━━━━━━━━━━━━━━━━━━ \n`
           
            .trim(),
-           "description": "*DON'T SPAM*",
+           "description": "",
           "buttonText": "Click  Here",
           "listType": "SINGLE_SELECT",
           "sections": [

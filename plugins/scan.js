@@ -1,6 +1,3 @@
-// Thanks to TOXIC-DEVIL
-// https://.com/TOXIC-DEVIL
-
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args || !args[0] || args.length === 0) throw `uhm.. which number?\n\nexample:\n${usedPrefix + command} 919539102851`
     if (args[0].startsWith('0')) throw 'Use Country code!'
