@@ -10,7 +10,9 @@ const defaultMenu = {
 
       ✪〔 %me 〕✪
      
-🔸Hai, %name!
+🔸 Hai, %name !
+
+🔸 ${ucapan()}
 
 🔸 Github: [ sachu-settan.github.io ]
 
