@@ -4,7 +4,7 @@ const { promisify } = require('util')
 const { join } = require('path')
 
 let confirmation = {}
-let repository = 'DEVILSER/Ammu'
+let repository = 'Sachu-Settan/Rose-Mwol'
 let branch = 'master'
 
 async function handler(m, { text }) {
