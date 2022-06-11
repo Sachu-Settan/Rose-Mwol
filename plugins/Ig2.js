@@ -12,3 +12,5 @@ handler.limit = true
 handler.command = /^(ig2(dl)|insta?)$/i
 
 module.exports = handler
+
+
